@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'Cloning the repository...'
+                echo 'C // git url: 'https://github.com/your/repo.git')
+
                 checkout scm
             }
         }
@@ -16,21 +17,21 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the application...'
-                sh 'mvn clean compile'
+                sh  // sh './build.sh
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running tests...'
-                sh 'mvn test'
+                echo 'test the application...'
+                sh  // sh './run-tests.sh'
             }
         }
 
-        stage('Package') {
+        stage('deploy') {
             steps {
-                echo 'Packaging the application...'
-                sh 'mvn package'
+                echo 'deploy the application...'
+                sh // sh './deploy.sh'
             }
         }
     }
