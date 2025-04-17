@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'C // git url: 'https://github.com/your/repo.git')
+                echo ( // git url: 'https://github.com/your/repo.git')
 
                 checkout scm
             }
@@ -23,7 +23,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'test the application...'
+                echo 'Running the tests...'
                 sh  // sh './run-tests.sh'
             }
         }
@@ -33,5 +33,17 @@ pipeline {
                 echo 'deploy the application...'
                 sh // sh './deploy.sh'
             }
+        }
+    }
+   post {
+        always {
+            echo 'Cleaning up...'
+            cleanWs()
+        }
+        success {
+            echo 'CI pipeline completed successfully!'
+        }
+        failure {
+            echo 'CI pipeline failed.'
         }
     }
