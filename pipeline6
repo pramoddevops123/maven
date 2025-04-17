@@ -17,21 +17,21 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the application...'
-                sh  // sh './build.sh
+                // sh './build.sh
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running the tests...'
-                sh  // sh './run-tests.sh'
+                 // sh './run-tests.sh'
             }
         }
 
         stage('deploy') {
             steps {
                 echo 'deploy the application...'
-                sh // sh './deploy.sh'
+                 // sh './deploy.sh'
             }
         }
     }
